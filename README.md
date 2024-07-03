@@ -1,59 +1,46 @@
 <p align="center">
-<img width="150" height="150" src="assets/logo.png" alt="Laravel Package Skeleton Logo"/>
-<br><b>Laravel Package Skeleton</b>
+<img width="150" height="150" src="assets/logo.png" alt="QR Forge"/>
+<br><b>QR Forge</b>
 </p>
 <p align="center">
-<a href="https://github.com/algoyounes/laravel-package-skeleton/actions"><img src="https://github.com/algoyounes/laravel-package-skeleton/actions/workflows/unit-tests.yml/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/algoyounes/laravel-package-skeleton"><img src="https://img.shields.io/packagist/dt/algoyounes/laravel-package-skeleton" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/algoyounes/laravel-package-skeleton"><img src="https://img.shields.io/packagist/v/algoyounes/laravel-package-skeleton" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/algoyounes/laravel-package-skeleton"><img src="https://img.shields.io/packagist/l/algoyounes/laravel-package-skeleton" alt="License"></a>
+<a href="https://github.com/algoyounes/qr-forge/actions"><img src="https://github.com/algoyounes/qr-forge/actions/workflows/unit-tests.yml/badge.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/algoyounes/qr-forge"><img src="https://img.shields.io/packagist/dt/algoyounes/qr-forge" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/algoyounes/qr-forge"><img src="https://img.shields.io/packagist/v/algoyounes/qr-forge" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/algoyounes/qr-forge"><img src="https://img.shields.io/packagist/l/algoyounes/qr-forge" alt="License"></a>
 </p>
 
-Creating Laravel packages made it easy! You can start building your own modular, organized package effortlessly.
-
-> [!NOTE]
-> This package requires PHP 8.2+ and Laravel 11+ 
+QR Forge is a Laravel package that allows you to generate QR codes for your models.
 
 ## Installation
 
 You can install the package globally via composer:
 
-```
-composer global require algoyounes/laravel-package-skeleton
+```bash
+  composer global require algoyounes/qr-forge
 ```
 
 ## Usage
 
-Once installed, you can use the following commands to streamline your package development process:
+### Generate Base64
 
-**⚡️ Create your package using composer :**
-```
-composer create-project algoyounes/laravel-package-skeleton --prefer-source YourPackageName
-```
+```php
+use AlgoYounes\QRForge\Facades\QRForge;
 
-**🚀 Run the entire test suite :**
-```
-composer test
+$base64 = QRForge::fromArray([ Tag::create(1, 'test') ])->base64();
 ```
 
-Running `composer test` will execute the following tasks :
-- 🔄 Refactoring Tests: `composer rector`
-- 🧹 Linting Tests: `composer test:lint`
-- 🔍 Static Analysis Tests: `composer test:types`
-- 🛠️ Unit Tests: `composer test:unit`
+### Generate Plain
 
-**🔧 Install Git Hooks:**
-```
-composer hook:install
-```
-Running `composer hook` will execute the following tasks :
-- 🔄 Pre-commit Hook: `composer hook:pre-commit`
-- 🧹 Pre-push Hook: `composer hook:pre-push`
+```php
+use AlgoYounes\QRForge\Facades\QRForge;
 
-**🛠️ Fix code issues:**
+$plain = QRForge::fromArray([ Tag::create(1, 'test') ])->plain();
 ```
-composer fix
+
+### Render A QR Code Image
+
+```php
+use AlgoYounes\QRForge\Facades\QRForge;
+
+QRForge::fromArray([ Tag::create(1, 'test') ])->render();
 ```
-Running `composer fix` will execute the following tasks:
-- ✨ Laravel linting Fixes: `composer fix:lint`
-- 🔄 Refactoring Fixes: `composer fix:refactor`
