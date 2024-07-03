@@ -14,25 +14,21 @@ class QrForge
      * Create a new QrForge instance.
      *
      * @param ValueObject[] $items Array of ValueObject instances.
-     * @param array<string, mixed> $options Configuration options for QROptions.
      */
     public function __construct(
-        protected array $items,
-        protected array $options
+        protected array $items
     ) {
         $this->items = array_filter($items, static fn($item): bool => $item instanceof ValueObject);
-        $this->qrOptions = new QROptions($options);
     }
 
     /**
      * Create a new QrForge instance.
      *
      * @param ValueObject[] $items Array of ValueObject instances.
-     * @param array<string, mixed> $options Configuration options for QROptions.
      */
-    public static function create(array $items = [], array $options = []): self
+    public static function fromArray(array $items = []): self
     {
-        return new self($items, $options);
+        return new self($items);
     }
 
     /**
