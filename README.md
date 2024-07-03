@@ -9,7 +9,7 @@
 <a href="https://packagist.org/packages/algoyounes/qr-forge"><img src="https://img.shields.io/packagist/l/algoyounes/qr-forge" alt="License"></a>
 </p>
 
-QR Forge is a Laravel package that allows you to generate QR codes for your models.
+A PHP package that allows you to generate QR codes with ease.
 
 ## Installation
 
