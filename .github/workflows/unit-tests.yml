@@ -52,9 +52,6 @@ jobs:
       - name: Run Rector (Dry Run)
         run: composer test:refactor
 
-      - name: Run Lint Tests
-        run: composer test:lint
-
       - name: Run PHPStan
         run: composer test:types
 

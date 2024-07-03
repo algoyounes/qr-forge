@@ -1,6 +1,6 @@
 <?php
 
-namespace AlgoYounes\Skeleton\Tests;
+namespace AlgoYounes\QrForge\Tests;
 
 use PHPUnit\Framework\TestCase as BaseTestCase;
 
