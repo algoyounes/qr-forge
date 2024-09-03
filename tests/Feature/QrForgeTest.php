@@ -6,6 +6,7 @@ use AlgoYounes\QrForge\QrForge;
 use AlgoYounes\QrForge\Tests\TestCase;
 use AlgoYounes\QrForge\ValueObjects\KeyValue;
 use AlgoYounes\QrForge\ValueObjects\Tag;
+use chillerlan\QRCode\Output\QROutputInterface;
 
 class QrForgeTest extends TestCase
 {
@@ -48,7 +49,7 @@ class QrForgeTest extends TestCase
         ]);
 
         $qrForge->withOptions([
-            'outputType' => 'data-uri'
+            'outputType' => QROutputInterface::GDIMAGE_PNG
         ]);
 
         $image = $qrForge->render();
