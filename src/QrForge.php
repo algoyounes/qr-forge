@@ -19,6 +19,7 @@ class QrForge
         protected array $items
     ) {
         $this->items = array_filter($items, static fn($item): bool => $item instanceof ValueObject);
+        $this->qrOptions = new QROptions([]);
     }
 
     /**
