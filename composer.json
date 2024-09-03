@@ -27,7 +27,7 @@
     },
     "require": {
         "php": "^8.2",
-        "chillerlan/php-qrcode": "dev-main"
+        "chillerlan/php-qrcode": "dev-main#034b3a383f16dab846b89913c9cd91433add3277"
     },
     "require-dev": {
         "pestphp/pest": "^2.28.1",
