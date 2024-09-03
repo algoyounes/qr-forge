@@ -9,6 +9,7 @@ use AlgoYounes\QrForge\ValueObjects\Tag;
 
 class QrForgeTest extends TestCase
 {
+    /** @test */
     public function it_can_add_items_and_generate_tlv(): void
     {
         $qrForge = QrForge::fromArray([
@@ -20,6 +21,7 @@ class QrForgeTest extends TestCase
         $this->assertEquals($expectedTLV, bin2hex($qrForge->toTLV()));
     }
 
+    /** @test */
     public function it_can_generate_base64_encoded_qr_code(): void
     {
         $qrForge = QrForge::fromArray(
@@ -38,6 +40,7 @@ class QrForgeTest extends TestCase
         $this->assertTrue($this->isValidBase64($base64));
     }
 
+    /** @test */
     public function it_can_render_qr_code_image(): void
     {
         $qrForge = QrForge::fromArray([
