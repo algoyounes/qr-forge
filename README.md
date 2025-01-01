@@ -13,7 +13,7 @@ A PHP package that allows you to generate QR codes with ease.
 
 ## Installation
 
-You can install the package globally via composer:
+You can install the package via composer:
 
 ```bash
 composer require algoyounes/qr-forge
