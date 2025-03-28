@@ -44,3 +44,10 @@ use AlgoYounes\QRForge\Facades\QRForge;
 
 QRForge::fromArray([ Tag::create(1, 'test') ])->render();
 ```
+
+## Credits
+This package utilizes **[chillerlan/php-qrcode](https://github.com/chillerlan/php-qrcode)** under the hood for QR code generation.  
+
+## License
+
+The QrForge package is open-sourced software licensed under the [MIT license](LICENSE).
